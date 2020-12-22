@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +23,11 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 ############### login routes ##################
-Route::get('/doctor/login', [App\Http\Controllers\HomeController::class, 'doctor_login'])->name('doctor_login');
-Route::post('/doctor/check', [App\Http\Controllers\HomeController::class, 'doctor_check'])->name('doctor_check');
+        /************Doctor**************/
+Route::get('/doctor/login', [DoctorController::class, 'doctor_login'])->name('doctor_login');
+Route::post('/doctor/dashboard', [DoctorController::class, 'doctor_check'])->name('doctor_dashboard');
 
-Route::get('/receptionist/login', [App\Http\Controllers\HomeController::class, 'receptionist_login'])->name('receptionist_login');
-Route::get('/receptionist/register', [App\Http\Controllers\HomeController::class, 'receptionist_register'])->name('receptionist_register');
-Route::post('/receptionist/check', [App\Http\Controllers\HomeController::class, 'receptionist_check'])->name('receptionist_check');
+        /************Receptionist**************/
+Route::get('/receptionist/login', [App\Http\Controllers\ReceptionistController::class, 'receptionist_login'])->name('receptionist_login');
+Route::get('/receptionist/reg   ister', [App\Http\Controllers\ReceptionistController::class, 'receptionist_register'])->name('receptionist_register');
+Route::post('/receptionist/store', [App\Http\Controllers\ReceptionistController::class, 'receptionist_store'])->name('receptionist_store');

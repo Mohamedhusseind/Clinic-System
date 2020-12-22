@@ -28,44 +28,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function doctor_login()
-    {
-        return view('doctor.doctor_login');
-    }
-    public function doctor_check(Request $request)
-    {
-        if (isset($request)){
-            $doctor = Doctor::find(['email',$request['email']]);
-            if($doctor)
-            {
-                return view('doctor.doctor_page');
-            }
-            else
-            {echo "not found";}
-        }
-        return view('doctor_login');
-    }
-
-    public function receptionist_login()
-    {
-        return view('receptionist.receptionist_login');
-    }
-    public function receptionist_register()
-    {
-        return view('receptionist.register');
-    }
-    public function receptionist_check(Request $request)
-    {
-        if (isset($request)){
-            $receptionist = Receptionist::find(['name',$request['name']]);
-            if($receptionist)
-            {
-                return view('receptionist.receptionist_page');
-            }
-            else
-            {echo "not found";}
-        }
-        return view('doctor_login');
-    }
-
 }

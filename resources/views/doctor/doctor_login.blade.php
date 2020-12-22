@@ -8,7 +8,7 @@
                     <div class="card-header">{{ __('Login as a Doctor') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('doctor_check') }}">
+                        <form method="POST" action="{{ route('doctor_dashboard') }}">
                             @csrf
 
                             <div class="form-group row">
