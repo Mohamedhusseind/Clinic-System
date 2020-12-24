@@ -17,7 +17,7 @@ class CreatePatientsTable extends Migration
             $table->id();
             $table->foreignId('reception_id')->references('id')->on('receptionists');
             $table->string('patient_name');
-            $table->string('patient_type');
+            $table->string('status');
             $table->string('age');
             $table->string('address');
             $table->string('phone');

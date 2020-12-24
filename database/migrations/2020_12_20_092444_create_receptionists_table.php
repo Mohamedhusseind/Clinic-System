@@ -17,6 +17,7 @@ class CreateReceptionistsTable extends Migration
             $table->id();
             $table->foreignId('doctor_id')->references('id')->on('doctors');
             $table->string('name');
+            $table->string('email');
             $table->string('phone');
             $table->string('address');
             $table->string('password');

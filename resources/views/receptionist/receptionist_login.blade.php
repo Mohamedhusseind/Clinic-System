@@ -8,7 +8,8 @@
                     <div class="card-header">{{ __('Login as a Receptionist') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
+                        <p class="text-danger">{{Session::get('msg')}}</p>
+                        <form method="POST" action="{{ route('receptionist_dashboard') }}">
                             @csrf
 
                             <div class="form-group row">

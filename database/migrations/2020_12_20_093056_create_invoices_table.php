@@ -17,9 +17,10 @@ class CreateInvoicesTable extends Migration
             $table->id();
             $table->foreignId('reception_id')->references('id')->on('receptionists');
             $table->foreignId('patient_id')->references('id')->on('patients');
+            $table->string('patient_name');
             $table->string('patient_status');
             $table->string('reservation_price');
-            $table->string('address');
+            $table->string('phone');
         });
     }
 

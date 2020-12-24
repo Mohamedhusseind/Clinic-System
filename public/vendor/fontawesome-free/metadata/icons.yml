@@ -20285,7 +20285,7 @@ user-md:
     - 5.0.3
     - 5.0.7
     - 5.0.11
-  label: Doctor
+  label: doctor.blade.php
   search:
     terms:
       - covid-19
