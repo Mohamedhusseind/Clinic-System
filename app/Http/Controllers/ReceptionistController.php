@@ -20,6 +20,11 @@ class ReceptionistController extends Controller
     {
         return view('doctor.addReceptionist');
     }
+    public function list_receptionists()
+    {
+        $receptionists = Receptionist::all();
+        return view('doctor.showReceptionists',compact('receptionists'));
+    }
 
     public function store(Request $request)
     {
@@ -102,7 +107,7 @@ class ReceptionistController extends Controller
         //return view('receptionist.register');
     }
 
-    public function list_patient()
+    public function list_patients()
     {
         $patients = Patient::select('id','reception_id','patient_name','status','age','address','phone','gender')->get();
         return view('receptionist.showPatients',compact('patients'));

@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Appointment extends Model
+class Recipe extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'doctor_id','patient_id', 'status', 'diagnosis'
+        'doctor_id','patient_id', 'product_name', 'description'
     ];
+    public $timestamps=true;
 }

@@ -19,12 +19,12 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/recipe.css')}}" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
 @yield('content')
-
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
 <script src={{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}></script>
@@ -41,3 +41,9 @@
 <!-- Page level custom scripts -->
 <script src={{asset('js/demo/chart-area-demo.js')}}></script>
 <script src={{asset('js/demo/chart-pie-demo.js')}}></script>
+<!--      select2 ---->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='select2/dist/js/select2.min.js' type='text/javascript'></script>
+
+<!-- CSS -->
+<link href='select2/dist/css/select2.min.css' rel='stylesheet' type='text/css'>

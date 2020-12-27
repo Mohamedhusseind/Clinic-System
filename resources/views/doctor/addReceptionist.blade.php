@@ -45,8 +45,9 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <a class="collapse-item" href={{route('add_appointment')}}>Add Appointment</a>
+                        <a class="collapse-item" href={{route('add_recipe')}}>Add Recipe</a>
+                        <a class="collapse-item" href={{route('add_product')}}>Add Product</a>
                     </div>
                 </div>
             </li>
@@ -56,16 +57,18 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Show Lists</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <h6 class="collapse-header">SHOW LISTS:</h6>
+                        <a class="collapse-item" href="">Show Patients</a>
+                        <a class="collapse-item" href="">Show Appointments</a>
+                        <a class="collapse-item" href="">Show Recipes</a>
+                        <a class="collapse-item" href="">Show Products</a>
+                        <a class="collapse-item" href="">Show Doctors</a>
+                        <a class="collapse-item" href="">Show Receptionists</a>
                     </div>
                 </div>
             </li>
@@ -88,13 +91,8 @@
                 <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar" >
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href={{route('add_patient')}}>Add Patient</a>
                         <a class="collapse-item active" href={{route('add_receptionist')}}>Add Receptionist</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href={{route('add_doctor')}}>Add Doctor</a>
                     </div>
                 </div>
             </li>

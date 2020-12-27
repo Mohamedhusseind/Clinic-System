@@ -1,6 +1,7 @@
 @extends('layouts.doctor')
+
 @section('content')
-    <body id="page-top">
+<body id="page-top">
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -13,7 +14,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Receptionist </div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -35,18 +36,19 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>Categories</span>
                 </a>
-                <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item " href={{route('add_patient')}}></a>
-                        <a class="collapse-item " href={{route('add_patient')}}>Add Patient</a>
-                        <a class="collapse-item " href={{route('add_invoice')}}>Add Invoice</a>
+                        <a class="collapse-item" href={{route('add_appointment')}}>Add Appointment</a>
+                        <a class="collapse-item active" href={{route('add_recipe')}}>Add Recipe</a>
+                        <a class="collapse-item" href={{route('add_product')}}>Add Product</a>
                     </div>
                 </div>
             </li>
@@ -54,14 +56,20 @@
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                   aria-expanded="true" aria-controls="collapseUtilities">
+                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Show Lists</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                     data-parent="#accordionSidebar">
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <h6 class="collapse-header">SHOW LISTS:</h6>
+                        <a class="collapse-item" href="">Show Patients</a>
+                        <a class="collapse-item" href="">Show Appointments</a>
+                        <a class="collapse-item" href="">Show Recipes</a>
+                        <a class="collapse-item" href="">Show Products</a>
+                        <a class="collapse-item" href="">Show Doctors</a>
+                        <a class="collapse-item" href="">Show Receptionists</a>
                     </div>
                 </div>
             </li>
@@ -75,17 +83,17 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                   aria-expanded="true" aria-controls="collapsePages">
+                    aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Show</span>
+                    <span>Pages</span>
                 </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar" >
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item " href={{route('show_patient')}}>Show Patients</a>
-                        <a class="collapse-item active" href={{route('show_invoices')}}>Show Invoices</a>
+                        <a class="collapse-item " href={{route('add_receptionist')}}>Add Receptionist</a>
+                        <a class="collapse-item" href={{route('add_doctor')}}>Add Doctor</a>
                     </div>
                 </div>
             </li>
@@ -98,7 +106,7 @@
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
@@ -125,18 +133,16 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <form class="form-inline">
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </form>
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
                     <!-- Topbar Search -->
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                   aria-label="Search" aria-describedby="basic-addon2">
+                                aria-label="Search" aria-describedby="basic-addon2">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
@@ -151,17 +157,17 @@
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                 aria-labelledby="searchDropdown">
+                                aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small"
-                                               placeholder="Search for..." aria-label="Search"
-                                               aria-describedby="basic-addon2">
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -175,14 +181,14 @@
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
                                 <!-- Counter - Alerts -->
                                 <span class="badge badge-danger badge-counter">3+</span>
                             </a>
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="alertsDropdown">
+                                aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
                                 </h6>
@@ -226,21 +232,21 @@
                         <!-- Nav Item - Messages -->
                         <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
                                 <!-- Counter - Messages -->
                                 <span class="badge badge-danger badge-counter">7</span>
                             </a>
                             <!-- Dropdown - Messages -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="messagesDropdown">
+                                aria-labelledby="messagesDropdown">
                                 <h6 class="dropdown-header">
                                     Message Center
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
                                         <img class="rounded-circle" src="img/undraw_profile_1.svg"
-                                             alt="">
+                                            alt="">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -252,7 +258,7 @@
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
                                         <img class="rounded-circle" src="img/undraw_profile_2.svg"
-                                             alt="">
+                                            alt="">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -264,7 +270,7 @@
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
                                         <img class="rounded-circle" src="img/undraw_profile_3.svg"
-                                             alt="">
+                                            alt="">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -276,7 +282,7 @@
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
                                         <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                                             alt="">
+                                            alt="">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div>
@@ -294,14 +300,14 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php ?>></span>
                                 <img class="img-profile rounded-circle"
-                                     src="img/undraw_profile.svg">
+                                    src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="userDropdown">
+                                aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
@@ -325,59 +331,67 @@
                     </ul>
 
                 </nav>
-                <!-- End of Topbar -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                                                                                   href="https://datatables.net">official DataTables documentation</a>.</p>
-
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Status</th>
-                                    <th>Reservation Price</th>
-                                    <th>Phone</th>
-                                    <th>Patient ID</th>
-                                    <th>Reception ID</th>
-                                </tr>
-                                </thead>
-                                </tbody>
-                                    @foreach($invoices as $invoice)
-                                        <tr>
-                                            <th>{{$invoice->id}}</th>
-                                            <th>{{$invoice->patient_name }}</th>
-                                            <th>{{$invoice->patient_status}}</th>
-                                            <th>{{$invoice->reservation_price}}</th>
-                                            <th>{{$invoice->phone}}</th>
-                                            <th>{{$invoice->patient_id}}</th>
-                                            <th>{{$invoice->reception_id}}</th>
-                                        </tr>
-                                    @endforeach
-                                </table>
+                <!-- Receptionist Form -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-9 " >
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Add New Recipe!</h1>
                             </div>
+                            <div class="text-center">
+                                <p class="h4  mb-4 text-success">{{Session::get('msg')}}</p>
+                                <p class="h4  mb-4 text-danger">{{Session::get('error')}}</p>
+                            </div>
+                            <form  method="post" action="{{route('store_recipe')}}" class="user">
+                                @csrf
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="status" name="status"
+                                               placeholder="Status" >
+                                        @error('status')
+                                        <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="status" name="patient_id"
+                                               placeholder="Patient ID" >
+                                        @error('patient_id')
+                                        <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                    <input type="hidden" value="{{Session::get('doctor_id')}}" name="doctor_id" id="doctor_id">
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        <select class="custom-select" name="product" id="inputGroupSelect01">
+                                            <option selected>Choose...</option>
+                                            @foreach($products as $product)
+                                                <option> {{$product->name}}</option>
+                                                @endforeach
+                                        </select>
+                                    </div>
+                                    @error('diagnosis')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <h6>Diagnosis</h6>
+                                    <textarea placeholder="Diagnosis" class="form-control form-control" style="height: 100px" name="diagnosis">
+
+                                    </textarea>
+                                    @error('diagnosis')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-user btn-block">Add Appointment</button>
+
+                            </form>
+                            <hr>
                         </div>
                     </div>
-
                 </div>
-
-                <!-- /.container-fluid -->
-
-            </div>
-            <!-- End of Main Content -->
+            <!-- End Form -->
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
@@ -402,7 +416,7 @@
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -419,6 +433,25 @@
             </div>
         </div>
     </div>
+    @endsection
 
 
-@endsection
+</body>
+<script>
+    $(document).ready(function(){
+
+        // Initialize select2
+        $("#selUser").select2();
+
+        // Read selected option
+        $('#but_read').click(function(){
+            var username = $('#selUser option:selected').text();
+            var userid = $('#selUser').val();
+
+            $('#result').html("id : " + userid + ", name : " + username);
+
+        });
+    });
+
+</script>
+</html>

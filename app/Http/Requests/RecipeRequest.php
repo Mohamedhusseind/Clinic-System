@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AppointmentRequest extends FormRequest
+class RecipeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,6 +25,7 @@ class AppointmentRequest extends FormRequest
     {
         return [
             'status'=>'required',
+            'product'=>'required',
             'patient_id'=>'required',
             'diagnosis'=>'required',
         ];
@@ -33,6 +34,7 @@ class AppointmentRequest extends FormRequest
     {
         return [
             'status.required'=>'status required',
+            'product.required'=>'status required',
             'patient_id.required'=>'ID required',
             'diagnosis.required'=>'Diagnosis required',
         ];

@@ -13,7 +13,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Receptionist </div>
+                <div class="sidebar-brand-text mx-3">Receptionist</div>
             </a>
 
             <!-- Divider -->
@@ -41,12 +41,11 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Components</span>
                 </a>
-                <div id="collapseTwo" class="collapse " aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item " href={{route('add_patient')}}></a>
-                        <a class="collapse-item " href={{route('add_patient')}}>Add Patient</a>
-                        <a class="collapse-item " href={{route('add_invoice')}}>Add Invoice</a>
+                        <a class="collapse-item " href={{route('add_receptionist')}}>Add Receptionist</a>
+                        <a class="collapse-item" href={{route('add_doctor')}}>Add Doctor</a>
                     </div>
                 </div>
             </li>
@@ -56,12 +55,18 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Show Lists</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <h6 class="collapse-header">SHOW LISTS:</h6>
+                        <a class="collapse-item" href="">Show Patients</a>
+                        <a class="collapse-item" href="">Show Appointments</a>
+                        <a class="collapse-item" href={{route('list_recipes')}}>Show Recipes</a>
+                        <a class="collapse-item active" href={{route('list_products')}}>Show Products</a>
+                        <a class="collapse-item" href={{route('list_doctors')}}>Show Doctors</a>
+                        <a class="collapse-item" href="">Show Receptionists</a>
                     </div>
                 </div>
             </li>
@@ -84,8 +89,8 @@
                 <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item " href={{route('show_patient')}}>Show Patients</a>
-                        <a class="collapse-item active" href={{route('show_invoices')}}>Show Invoices</a>
+                        <a class="collapse-item " href={{route('add_receptionist')}}>Add Receptionist</a>
+                        <a class="collapse-item" href={{route('add_doctor')}}>Add Doctor</a>
                     </div>
                 </div>
             </li>
@@ -348,23 +353,21 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
-                                    <th>Status</th>
-                                    <th>Reservation Price</th>
-                                    <th>Phone</th>
-                                    <th>Patient ID</th>
-                                    <th>Reception ID</th>
+                                    <th>Description</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Doctor_id</th>
                                 </tr>
                                 </thead>
                                 </tbody>
-                                    @foreach($invoices as $invoice)
+                                    @foreach($products as $product)
                                         <tr>
-                                            <th>{{$invoice->id}}</th>
-                                            <th>{{$invoice->patient_name }}</th>
-                                            <th>{{$invoice->patient_status}}</th>
-                                            <th>{{$invoice->reservation_price}}</th>
-                                            <th>{{$invoice->phone}}</th>
-                                            <th>{{$invoice->patient_id}}</th>
-                                            <th>{{$invoice->reception_id}}</th>
+                                            <th>{{$product->id}}</th>
+                                            <th>{{$product->name }}</th>
+                                            <th>{{$product->description}}</th>
+                                            <th>{{$product->quantity}}</th>
+                                            <th>{{$product->price}}</th>
+                                            <th>{{$product->doctor_id}}</th>
                                         </tr>
                                     @endforeach
                                 </table>

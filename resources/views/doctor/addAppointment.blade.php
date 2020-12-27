@@ -45,8 +45,9 @@
                 <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item active" href={{route('add_appointment')}}>Add Appointments</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <a class="collapse-item active" href={{route('add_appointment')}}>Add Appointment</a>
+                        <a class="collapse-item" href={{route('add_recipe')}}>Add Recipe</a>
+                        <a class="collapse-item" href={{route('add_product')}}>Add Product</a>
                     </div>
                 </div>
             </li>
@@ -56,16 +57,18 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Show List</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Colors</a>
-                        <a class="collapse-item" href="utilities-border.html">Borders</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                        <a class="collapse-item" href="utilities-other.html">Other</a>
+                        <h6 class="collapse-header">SHOW LISTS:</h6>
+                        <a class="collapse-item" href="">Show Patients</a>
+                        <a class="collapse-item" href="">Show Appointments</a>
+                        <a class="collapse-item" href="">Show Recipes</a>
+                        <a class="collapse-item" href="">Show Products</a>
+                        <a class="collapse-item" href="">Show Doctors</a>
+                        <a class="collapse-item" href="">Show Receptionists</a>
                     </div>
                 </div>
             </li>
@@ -85,16 +88,11 @@
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Pages</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar" >
+                <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar" >
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href={{route('add_patient')}}>Add Patient</a>
                         <a class="collapse-item " href={{route('add_receptionist')}}>Add Receptionist</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <a class="collapse-item" href={{route('add_doctor')}}>Add Doctor</a>
                     </div>
                 </div>
             </li>
@@ -302,7 +300,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php ?>></span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -337,7 +335,7 @@
                     <div class="col-lg-9 " >
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Add New Receptionist!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Add New Appointment!</h1>
                             </div>
                             <div class="text-center">
                                 <p class="h4  mb-4 text-success">{{Session::get('msg')}}</p>
@@ -348,7 +346,17 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="status" name="status"
-                                               placeholder="Status" required>
+                                               placeholder="Status" >
+                                        @error('status')
+                                        <small class="text-danger">{{$message}}</small>
+                                        @enderror
+                                    </div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="status" name="patient_id"
+                                               placeholder="Patient ID" >
+                                        @error('patient_id')
+                                        <small class="text-danger">{{$message}}</small>
+                                        @enderror
                                     </div>
                                     <input type="hidden" value="{{Session::get('doctor_id')}}" name="doctor_id" id="doctor_id">
                                 </div>
@@ -357,6 +365,9 @@
                                     <textarea placeholder="Diagnosis" class="form-control form-control" style="height: 200px" name="diagnosis">
 
                                     </textarea>
+                                    @error('diagnosis')
+                                    <small class="text-danger">{{$message}}</small>
+                                    @enderror
                                 </div>
 
                                 <button type="submit" class="btn btn-primary btn-user btn-block">Add Appointment</button>

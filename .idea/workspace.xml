@@ -2,24 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36476fe6-2c1f-47d2-bdf5-e06edec147b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/doctor/addAppointment.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/receptionist/addInvoice.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/receptionist/addPatient.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/receptionist/showInvoices.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/receptionist/showPatients.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/recipe.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/addDoctor.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/addProduct.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/addRecipe.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/showAppointments.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/showDoctors.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/showPatients.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/showProducts.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/showReceptionists.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/doctor/showRecipes.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DoctorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DoctorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReceptionistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReceptionistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Receptionist.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Receptionist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_20_092444_create_receptionists_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_20_092444_create_receptionists_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_20_092820_create_patients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_20_092820_create_patients_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_20_093029_create_appointements_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_20_093029_create_appointments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_20_093056_create_invoices_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_20_093056_create_invoices_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vendor/fontawesome-free/metadata/icons.yml" beforeDir="false" afterPath="$PROJECT_DIR$/public/vendor/fontawesome-free/metadata/icons.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/doctor/doctor_login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctor/doctor_login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/doctor/doctor_page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctor/doctor_page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AppointmentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AppointmentRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Appointment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Appointment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_20_092947_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_20_092947_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_20_093029_create_appointments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_20_093029_create_appointments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/doctor/addAppointment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctor/addAppointment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/doctor/addReceptionist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctor/addReceptionist.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/doctor/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/doctor/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/receptionist/receptionist_login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/receptionist/receptionist_login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/doctor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/doctor.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/receptionist/addInvoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/receptionist/addInvoice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/receptionist/addPatient.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/receptionist/addPatient.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/receptionist/showInvoices.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/receptionist/showInvoices.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/receptionist/showPatients.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/receptionist/showPatients.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -152,18 +163,19 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/receptionist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/doctor" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\clinc\public\css" />
       <recent name="C:\xampp\htdocs\clinc\resources\views\receptionist" />
       <recent name="C:\xampp\htdocs\clinc\resources\views\receptioninst" />
       <recent name="C:\xampp\htdocs\clinc\resources\views\doctor" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\clinc\resources\views\receptionist" />
       <recent name="C:\xampp\htdocs\clinc\resources\views\doctor" />
+      <recent name="C:\xampp\htdocs\clinc\resources\views\receptionist" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -201,7 +213,9 @@
       <workItem from="1608590514678" duration="612000" />
       <workItem from="1608613629789" duration="27457000" />
       <workItem from="1608709073704" duration="16642000" />
-      <workItem from="1608789762510" duration="323000" />
+      <workItem from="1608789762510" duration="16945000" />
+      <workItem from="1609011932188" duration="1730000" />
+      <workItem from="1609052355909" duration="21918000" />
     </task>
     <servers />
   </component>

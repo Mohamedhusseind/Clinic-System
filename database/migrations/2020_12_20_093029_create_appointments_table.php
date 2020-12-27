@@ -17,6 +17,7 @@ class CreateAppointmentsTable extends Migration
             $table->id();
             $table->foreignId('doctor_id')->references('id')->on('doctors');
             $table->string('status');
+            $table->foreignId('patient_id')->references('id')->on('patients');
             $table->string('diagnosis');
             $table->timestamps();
         });
