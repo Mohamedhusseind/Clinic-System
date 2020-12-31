@@ -8,9 +8,11 @@ use App\Models\Invoice;
 use App\Models\Patient;
 use App\Models\Receptionist;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 class ReceptionistController extends Controller
 {
+
     public function receptionist_login()
     {
         return view('receptionist.receptionist_login');
@@ -54,64 +56,20 @@ class ReceptionistController extends Controller
 
     public function receptionist_check(Request $request)
     {
-        if (isset($request)) {
-            $receptionist = Receptionist::where('email', '=', $request->email)->first();
-            if (isset($receptionist)) {
-                if (!Hash::check($request->password, $receptionist->password))
-                    return redirect()->back()->with('msg', 'Wrong Password!');
-                else {
-                    $request->session()->put('receptionist_id', $receptionist->id);
-                    $request->session()->put('receptionist_name', $receptionist->name);
-                    return view('receptionist.index');
-                }
-            } else {
-                return redirect()->back()->with('msg', 'This Email Not Exist');
-            }
+        if(Auth::guard('receptionist')->attempt(['email'=>$request->email,'password'=>$request->password]))
+        {
+            $receptionist = Receptionist::where('email','=',$request->email)->first();
+            $request->session()->put('receptionist_id',$receptionist->id);
+            $request->session()->put('receptionist_name',$receptionist->name);
+            return view('receptionist.index');
         }
-        return view('doctor_login');
+        else
+        {
+            return redirect()->back()->with('msg',"This Email Not Exist! please try again");
+        }
     }
 
-    public function add_patient(Request $request)
-    {
-        return view('receptionist.addPatient');
-    }
 
-######################## Patient Store ##################################
-    public function store_patient(PatientRequest $request)
-    {
-        //$validator = Validator::make($request->all(), $rules, $messages);
-
-        //if($validator->fails()){return redirect()->back()->withErrors($validator)->withInput($request->all());}
-        /*******check password *******/
-        if (isset($request)) {
-            $patient = Patient::where('phone', '=', $request->phone)->first();
-            if ($patient == true) {
-                return redirect()->back()->with('error', 'This patient Already Exist');
-            } else {
-                $patient = Patient::create([
-                    'reception_id' => $request->receptionist_id,
-                    'patient_name' => $request->name,
-                    'status' => $request->status,
-                    'age' => $request->age,
-                    'address' => $request->address,
-                    'phone' => $request->phone,
-                    'gender' => $request->gender,
-                ]);
-                return redirect()->back()->with(['msg', 'Done Receptionist Added Successfully']);
-            }
-            return redirect()->back()->with('error', 'The Password not match');
-
-        } else
-            echo "error";
-
-        //return view('receptionist.register');
-    }
-
-    public function list_patients()
-    {
-        $patients = Patient::select('id','reception_id','patient_name','status','age','address','phone','gender')->get();
-        return view('receptionist.showPatients',compact('patients'));
-    }
 
 ############################# Invoice ###################
 public function add_invoice()

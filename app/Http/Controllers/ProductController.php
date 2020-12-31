@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:doctor');
+    }
     public function add_product()
     {
         return view('doctor.addProduct');

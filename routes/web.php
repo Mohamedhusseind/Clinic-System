@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PatientController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReceptionistController;
 use App\Http\Controllers\RecipeController;
@@ -32,7 +33,7 @@ Route::get('/doctor/login', [DoctorController::class, 'doctor_login'])->name('do
 Route::get('/add/doctor', [DoctorController::class, 'add_doctor'])->name('add_doctor');
 Route::post('/doctor/store', [DoctorController::class, 'store_doctor'])->name('store_doctor');
 Route::post('/doctor/dashboard', [DoctorController::class, 'doctor_check'])->name('doctor_dashboard');
-Route::get('/doctor/list', [DoctorController::class, 'list_doctors'])->name('list_doctors');
+Route::get('/doctor/list', [DoctorController::class, 'list_doctors'])->name('list_doctors')->middleware('auth:doctor');
 
 ############################ Get logout route ##################
 Route::get('/logout',[HomeController::class,'getLogout'])->name('logout');
@@ -40,16 +41,16 @@ Route::get('/logout',[HomeController::class,'getLogout'])->name('logout');
 
 Route::get('/receptionist/login', [App\Http\Controllers\ReceptionistController::class, 'receptionist_login'])->name('receptionist_login');
 Route::post('/receptionist/dashboard', [App\Http\Controllers\ReceptionistController::class, 'receptionist_check'])->name('receptionist_dashboard');
-Route::get('/add/receptionist', [App\Http\Controllers\ReceptionistController::class, 'add_receptionist'])->name('add_receptionist');
+Route::get('/add/receptionist', [App\Http\Controllers\ReceptionistController::class, 'add_receptionist'])->name('add_receptionist')->middleware('auth:receptionist');
 Route::post('/receptionist/store', [App\Http\Controllers\ReceptionistController::class, 'store'])->name('receptionist_store');
-Route::get('/receptionist/list', [App\Http\Controllers\ReceptionistController::class, 'list_receptionists'])->name('list_receptionists');
+Route::get('/receptionist/list', [App\Http\Controllers\ReceptionistController::class, 'list_receptionists'])->name('list_receptionists')->middleware('auth:receptionist');
 
         /************Patient**************/
 
-Route::get('/add/patient', [App\Http\Controllers\ReceptionistController::class, 'add_patient'])->name('add_patient');
-Route::post('/patient/stores', [App\Http\Controllers\ReceptionistController::class, 'store_patient'])->name('store_patient');
-Route::get('/patient/List', [App\Http\Controllers\ReceptionistController::class, 'list_patient'])->name('show_patient');
-Route::get('/patient/show', [App\Http\Controllers\ReceptionistController::class, 'list_patients'])->name('list_patient');
+Route::get('/add/patient', [PatientController::class, 'add_patient'])->name('add_patient');
+Route::post('/patient/stores', [PatientController::class, 'store_patient'])->name('store_patient');
+Route::get('/patient/List', [PatientController::class, 'list_patient'])->name('show_patient');
+Route::get('/patient/show', [PatientController::class, 'list_patient'])->name('list_patient')->middleware('auth:receptionist');
 Route::get('/patient/list', [DoctorController::class, 'list_patients'])->name('list_patients');
 
         /************Appointments**************/

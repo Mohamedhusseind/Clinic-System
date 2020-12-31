@@ -86,9 +86,9 @@
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Add users</span>
                 </a>
-                <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
+                        <h6 class="collapse-header">Register Screens:</h6>
                         <a class="collapse-item " href={{route('add_receptionist')}}>Add Receptionist</a>
                         <a class="collapse-item" href={{route('add_doctor')}}>Add Doctor</a>
                     </div>

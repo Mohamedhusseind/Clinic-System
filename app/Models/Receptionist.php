@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-class Receptionist extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class Receptionist extends Authenticatable
 {
     use HasFactory;
     use HasFactory;

@@ -59,17 +59,16 @@
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>Show Lists</span>
                 </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
+                <div id="collapseUtilities" class="collapse " aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">SHOW LISTS:</h6>
-                        <a class="collapse-item" href="utilities-color.html">things</a>
-                        <a class="collapse-item" href="">Show Patients</a>
-                        <a class="collapse-item" href="">Show Appointments</a>
-                        <a class="collapse-item" href="">Show Recipes</a>
-                        <a class="collapse-item" href="">Show Products</a>
-                        <a class="collapse-item" href="">Show Doctors</a>
-                        <a class="collapse-item" href="">Show Receptionists</a>
+                        <a class="collapse-item" href={{route('list_patients')}}>Show Patients</a>
+                        <a class="collapse-item " href={{route('list_appointments')}}>Show Appointments</a>
+                        <a class="collapse-item" href={{route('list_recipes')}}>Show Recipes</a>
+                        <a class="collapse-item" href={{route('list_products')}}>Show Products</a>
+                        <a class="collapse-item" href={{route('list_doctors')}}>Show Doctors</a>
+                        <a class="collapse-item" href={{route('list_receptionists')}}>Show Receptionists</a>
                     </div>
                 </div>
             </li>
@@ -87,15 +86,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Show List</span>
+                    <span>Add Users</span>
                 </a>
                 <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar" >
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item " href={{route('add_patient')}}></a>
-                        <a class="collapse-item active" href={{route('add_appointment')}}>Add Appointment</a>
-                        <a class="collapse-item" href="cards.html">Add Recipe</a>
-                        <a class="collapse-item" href="cards.html">Add Product</a>
+                        <h6 class="collapse-header">Register Screens:</h6>
+                        <a class="collapse-item " href={{route('add_receptionist')}}>Add Receptionist</a>
+                        <a class="collapse-item" href={{route('add_doctor')}}>Add Doctor</a>
                     </div>
                 </div>
             </li>
